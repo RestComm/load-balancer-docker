@@ -15,5 +15,6 @@ it uses last last successful build of loadbalancer - https://github.com/RestComm
 By default app uses config file from docker container. Config file are localted by path `/opt/loadbalancer/config`
 
 Also you have 2 additional ways to specify config file:
+
 1. use CONFIG_URL: config file will be downloaded and processed on start 
 2. attach volume with config: `-v $PWD/config-lb-dir:/opt/loadbalancer/config`
