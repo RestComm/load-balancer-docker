@@ -1,8 +1,10 @@
-# load-balancer-docker
+# RestComm Load Balancer Docker Image
 
-Sip loadbalancer docker container
+RestComm is a next generation Cloud Communications Platform to rapidly build voice, video, and messaging applications, using mainstream development skills. Created by the people at Telestax.
 
-it uses last last successful build of loadbalancer - https://github.com/RestComm/load-balancer
+Using the RestComm Load Balancer docker image makes running RestComm Load Balancer easy and intuitive and improve the easiness of creating Restcomm Clusters.
+
+It uses the last successful build of the Restcomm Load Balancer project - https://github.com/RestComm/load-balancer
 
 ### Environment variables:
 1. EXTERNAL_PORT - the SIP port used where clients should connect
