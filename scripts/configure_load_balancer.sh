@@ -4,7 +4,14 @@ echo "Configure loadbalancer"
 echo "Work directory: ${LOADER_BALANCER_DIR}"
 
 if [ -z "${HOST_ADDRESS}" ]; then
-    NET_INTERFACE='eth0'
+
+    if [ -z "${INTERFACE}" ]; then
+        NET_INTERFACE="${INTERFACE}"
+    else
+        NET_INTERFACE='eth0'
+    fi
+    echo "NET_INTERFACE: $INTERFACE"
+
     echo "Looking for the appropriate interface"
     NET_INTERFACES=$(ifconfig | expand | cut -c1-8 | sort | uniq -u | awk -F: '{print $1;}')
 

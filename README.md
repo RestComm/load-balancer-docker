@@ -9,6 +9,7 @@ It uses the last successful build of the Restcomm Load Balancer project - https:
 ### Environment variables:
 1. EXTERNAL_PORT - the SIP port used where clients should connect
 2. INTERNAL_PORT - the SIP port used where restcomm instances should connect
+2. INTERFACE - Interface to be used from LB. If not set "eth0" will be used. (optional).
 3. HOST_ADDRESS - (optional) bind address for app. 
 4. LOG_LEVEL - log level for app
 5. CONFIG_URL - remote config url for app. Will be downloaded before start. Previous variables will be applied to it too
