@@ -32,6 +32,11 @@ if [ -n "${HOST_ADDRESS}" ]; then
     sed -i "s/host=.*/host=${HOST_ADDRESS}/" $LOADER_BALANCER_CONFIG
 fi
 
+if [ -n "${PUBLIC_IP}" ]; then
+    echo "PUBLIC_IP : ${PUBLIC_IP}"
+    sed -i "s/#public-ip=.*/public-ip=${PUBLIC_IP}/" $LOADER_BALANCER_CONFIG
+fi
+
 if [ -n "${INTERNAL_PORT}" ]; then
     echo "Setup internalPort: ${INTERNAL_PORT}"
     sed -i "s/internalPort=.*/internalPort=${INTERNAL_PORT}/" $LOADER_BALANCER_CONFIG
