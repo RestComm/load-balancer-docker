@@ -5,7 +5,7 @@ echo "Work directory: ${LOADER_BALANCER_DIR}"
 
 if [ -z "${HOST_ADDRESS}" ]; then
 
-    if [ -z "${INTERFACE}" ]; then
+    if [ -n "${INTERFACE}" ]; then
         NET_INTERFACE="${INTERFACE}"
     else
         NET_INTERFACE='eth0'
