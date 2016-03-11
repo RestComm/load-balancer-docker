@@ -30,6 +30,7 @@ RUN wget -qc  https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-Load
 
 # copy loadbalancer files
 ADD ./files/lb-configuration.properties ${LOADER_BALANCER_CONFIG}
+ADD ./files/keystore ${LOADER_BALANCER_DIR}/config/keystore
 ADD ./files/utils/read-network-props.sh ${LOADER_BALANCER_DIR}/utils/read-network-props.sh
 
 # add configuration scripts
