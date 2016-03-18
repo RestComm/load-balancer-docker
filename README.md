@@ -15,7 +15,8 @@ It uses the last successful build of the Restcomm Load Balancer project - https:
 5. CONFIG_URL - remote config url for app. Will be downloaded before start. Previous variables will be applied to it too
 
 ### Config file:
-By default app uses config file from docker container. Config file are localted by path `/opt/loadbalancer/config`
+By default app uses config file from docker container. Config file are localted by path `/opt/loadbalancer/config`. In the user guide  you can see how to configurate load balancer through config file - 
+[Restcomm Load Balancer User Guide](https://mobicents.ci.cloudbees.com/job/Restcomm-LoadBalancer/lastSuccessfulBuild/artifact/documentation/html_single/index.html)
 
 Also you have 2 additional ways to specify config file:
 
