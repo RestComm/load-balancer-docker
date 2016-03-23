@@ -15,15 +15,15 @@ It uses the last successful build of the Restcomm Load Balancer project - https:
 3. HOST_ADDRESS - (optional) bind address for app. 
 4. LOG_LEVEL - log level for app
 5. CONFIG_URL - remote config url for app. Will be downloaded before start. Previous variables will be applied to it too
-6. AMAZON_EC2 - if presents, script configures PUBLIC_IP automatically 
+6. AMAZON_EC2 - if **true**, script configures PUBLIC_IP automatically 
 
 ### Configure java options
-7. PROD_MODE - if true, script configures additional java options
+7. PROD_MODE - if **true**, script configures additional `java options`
 8. JAVA_XMS - override `Xms`, default 2048m
 9. JAVA_XMX - override `Xmx`, default 2048m
 10. JAVA_PERM_SIZE - override `PermSize`, default 512m
 11. JAVA_MAX_PERM_SIZE - override `MaxPermSize`, default 1024m
-12. JAVA_OPTS - override java options at all
+12. JAVA_OPTS - override `java options` at all
 
 ### Config file:
 By default app uses config file from docker container. Config file are localted by path `/opt/loadbalancer/config`. In the user guide  you can see how to configurate load balancer through config file - 
