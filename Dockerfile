@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y wget ipcalc bsdtar oracle-java8-install
 # create work dir
 ENV LOADER_BALANCER_DIR /opt/loadbalancer
 ENV LOADER_BALANCER_CONFIG /opt/loadbalancer/config/lb-configuration.properties
+ENV LOG4J_CONFIG ${LOADER_BALANCER_DIR}/lb-log4j.xml
+
 RUN mkdir -p ${LOADER_BALANCER_DIR}
 RUN mkdir -p ${LOADER_BALANCER_DIR}/utils
 RUN mkdir -p ${LOADER_BALANCER_DIR}/config
@@ -32,6 +34,7 @@ RUN wget -qc  https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-Load
 ADD ./files/lb-configuration.properties ${LOADER_BALANCER_CONFIG}
 ADD ./files/keystore ${LOADER_BALANCER_DIR}/config/keystore
 ADD ./files/utils/read-network-props.sh ${LOADER_BALANCER_DIR}/utils/read-network-props.sh
+ADD ./files/lb-log4j.xml ${LOG4J_CONFIG}
 
 # add configuration scripts
 RUN mkdir -p /etc/my_init.d
