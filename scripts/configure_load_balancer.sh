@@ -63,20 +63,5 @@ if [ -z "${LOG_LEVEL}" ]; then
     LOG_LEVEL="INFO"
 fi
 
-LOG_LEVEL_INT=0
-
-case "$LOG_LEVEL" in
-    OFF ) LOG_LEVEL_INT=0;;
-    FATAL ) LOG_LEVEL_INT=100;;
-    ERROR ) LOG_LEVEL_INT=200;;
-    WARN ) LOG_LEVEL_INT=300;;
-    INFO ) LOG_LEVEL_INT=400;;
-    DEBUG ) LOG_LEVEL_INT=500;;
-    TRACE ) LOG_LEVEL_INT=600;;
-esac
-
-echo "Setup gov.nist TRACE_LEVEL: ${LOG_LEVEL_INT}"
-sed -i "s/gov.nist.javax.sip.TRACE_LEVEL=.*/gov.nist.javax.sip.TRACE_LEVEL=${LOG_LEVEL_INT}/" $LOADER_BALANCER_CONFIG
-
 echo "Setup log level: ${LOG_LEVEL}"
 sed -i "s/WARN/${LOG_LEVEL}/g" ${LOG4J_CONFIG}
