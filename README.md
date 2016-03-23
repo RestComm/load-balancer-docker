@@ -17,7 +17,8 @@ It uses the last successful build of the Restcomm Load Balancer project - https:
 7. PROD_MODE - if presents, scripts reconfigures java memory preferences
 
 ### Config file:
-By default app uses config file from docker container. Config file are localted by path `/opt/loadbalancer/config`
+By default app uses config file from docker container. Config file are localted by path `/opt/loadbalancer/config`. In the user guide  you can see how to configurate load balancer through config file - 
+[Restcomm Load Balancer User Guide](https://mobicents.ci.cloudbees.com/job/Restcomm-LoadBalancer/lastSuccessfulBuild/artifact/documentation/html_single/index.html)
 
 Also you have 2 additional ways to specify config file:
 
