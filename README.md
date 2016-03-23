@@ -6,15 +6,24 @@ Using the RestComm Load Balancer docker image makes running RestComm Load Balanc
 
 It uses the last successful build of the Restcomm Load Balancer project - https://github.com/RestComm/load-balancer
 
-### Environment variables:
+## Environment variables:
+
+### General
 1. EXTERNAL_PORT - the SIP port used where clients should connect
 2. INTERNAL_PORT - the SIP port used where restcomm instances should connect
 2. INTERFACE - Interface to be used from LB. If not set "eth0" will be used. (optional).
 3. HOST_ADDRESS - (optional) bind address for app. 
 4. LOG_LEVEL - log level for app
 5. CONFIG_URL - remote config url for app. Will be downloaded before start. Previous variables will be applied to it too
-6. AMAZON_EC2 - if presents, script configures PUBLIC_IP automatically 
-7. PROD_MODE - if presents, scripts reconfigures java memory preferences
+6. AMAZON_EC2 - if **true**, script configures PUBLIC_IP automatically 
+
+### Configure java options
+7. PROD_MODE - if **true**, script configures additional `java options`
+8. JAVA_XMS - override `Xms`, default 2048m
+9. JAVA_XMX - override `Xmx`, default 2048m
+10. JAVA_PERM_SIZE - override `PermSize`, default 512m
+11. JAVA_MAX_PERM_SIZE - override `MaxPermSize`, default 1024m
+12. JAVA_OPTS - override `java options` at all
 
 ### Config file:
 By default app uses config file from docker container. Config file are localted by path `/opt/loadbalancer/config`. In the user guide  you can see how to configurate load balancer through config file - 

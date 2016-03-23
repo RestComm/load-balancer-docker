@@ -33,7 +33,7 @@ if [ -n "${HOST_ADDRESS}" ]; then
     sed -i "s/smppHost=.*/smppHost=${HOST_ADDRESS}/" $LOADER_BALANCER_CONFIG
 fi
 
-if [ -n "${AMAZON_EC2}" ] && [ -z "${PUBLIC_IP}" ]; then
+if [ "${AMAZON_EC2^^}" = "TRUE" ] && [ -z "${PUBLIC_IP}" ]; then
     echo "Get real public ip for Amazon"
     # http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html
     PUBLIC_IP=`curl -s -m 5 http://169.254.169.254/latest/meta-data/public-ipv4`
