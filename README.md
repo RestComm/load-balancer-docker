@@ -27,7 +27,7 @@ It uses the last successful build of the Restcomm Load Balancer project - https:
 
 ### Config file:
 By default app uses config file from docker container. Config file are localted by path `/opt/loadbalancer/config`. In the user guide  you can see how to configurate load balancer through config file - 
-[Restcomm Load Balancer User Guide](https://mobicents.ci.cloudbees.com/job/Restcomm-LoadBalancer/lastSuccessfulBuild/artifact/documentation/html_single/index.html)
+[Restcomm Load Balancer User Guide](https://mobicents.ci.cloudbees.com/job/Restcomm-LoadBalancer/lastSuccessfulBuild/artifact/documentation/html-book/Load_Balancer_User_Guide.html)
 
 Also you have 2 additional ways to specify config file:
 
