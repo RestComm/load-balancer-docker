@@ -11,11 +11,11 @@ CMD ["/sbin/my_init"]
 ### install java and etc ###
 ENV DEBIAN_FRONTEND noninteractive
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 RUN locale-gen en_US en_US.UTF-8 && dpkg-reconfigure locales
 
 RUN add-apt-repository ppa:webupd8team/java -y
-RUN apt-get update && apt-get install -y wget ipcalc bsdtar oracle-java8-installer openssl unzip tcpdump && apt-get autoremove && apt-get autoclean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget ipcalc bsdtar oracle-java7-installer openssl unzip tcpdump && apt-get autoremove && apt-get autoclean && rm -rf /var/lib/apt/lists/*
 ### end ###
 
 # create work dir
