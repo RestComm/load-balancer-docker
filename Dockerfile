@@ -11,7 +11,7 @@ CMD ["/sbin/my_init"]
 ### install java and etc ###
 ENV DEBIAN_FRONTEND noninteractive
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 RUN locale-gen en_US en_US.UTF-8 && dpkg-reconfigure locales
 
 RUN add-apt-repository ppa:webupd8team/java -y
