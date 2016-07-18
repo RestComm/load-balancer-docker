@@ -63,5 +63,12 @@ if [ -z "${LOG_LEVEL}" ]; then
     LOG_LEVEL="INFO"
 fi
 
+#Add TCPDUMP collection
+echo "LB_TRACE_LOG /opt/loadbalancer/logs/trace"
+mkdir -p "/opt/loadbalancer/logs/trace"
+nohup xargs bash -c "tcpdump -pni any -t -n -s 0   -G 3500 -w /opt/loadbalancer/logs/trace/lb_trace_%Y-%m-%d_%H:%M:%S-%Z.pcap -z gzip" &
+
+
+
 echo "Setup log level: ${LOG_LEVEL}"
 sed -i "s/WARN/${LOG_LEVEL}/g" ${LOG4J_CONFIG}
