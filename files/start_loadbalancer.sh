@@ -20,4 +20,9 @@ if [ -z "$JAVA_OPTS" ] && [ "${PROD_MODE^^}" = "TRUE" ]; then
     JAVA_OPTS="-Xms${JAVA_XMS} -Xmx${JAVA_XMX} -XX:PermSize=${JAVA_PERM_SIZE} -XX:MaxPermSize=${JAVA_MAX_PERM_SIZE} -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.local.only=false"
 fi
 
+if [ -z "${LOG_LEVEL}" ]; then
+    echo "Setup default log level"
+    LOG_LEVEL="INFO"
+fi
+
 java $JAVA_OPTS -DlogConfigFile=${LOADER_BALANCER_DIR}/lb-log4j.xml -DlogLevel=${LOG_LEVEL} -jar ${LOADER_BALANCER_DIR}/sip-balancer.jar -mobicents-balancer-config=${LOADER_BALANCER_CONFIG}
