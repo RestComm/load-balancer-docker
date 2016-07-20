@@ -38,5 +38,5 @@ Also you have 2 additional ways to specify config file:
 
 1. Launch Docker Restcomm Load Balancer with command ```docker run --name=lb restcomm/load-balancer:latest```
 2. Check the host address from the logs ```Setup host: 172.17.0.14```
-3. Launch Docker Restcomm Core with command ```docker run -i --name=restcomm-lb -v /var/log/restcomm/:/var/log/restcomm/ -e STATIC_ADDRESS=192.168.1.12 -e USE_STANDARD_PORTS=false -e LOAD_BALANCERS=172.17.0.14 -e ENVCONFURL="https://raw.githubusercontent.com/RestComm/Restcomm-Docker/master/scripts/restcomm_env_locally.sh" -p 80:80 -p 443:443 -p 9990:9990 -p 5060:5060 -p 5061:5061 -p 5062:5062 -p 5063:5063 -p 5060:5060/udp -p 65000-65050:65000-65050/udp restcomm/restcomm:lb```
+3. Launch Docker Restcomm Core with command ```docker run -i --name=restcomm-lb -v /var/log/restcomm/:/var/log/restcomm/ -e STATIC_ADDRESS=192.168.1.12 -e USE_STANDARD_PORTS=false -e LOAD_BALANCERS=172.17.0.14 -e CONFIG_URL="https://raw.githubusercontent.com/RestComm/Restcomm-Docker/master/scripts/restcomm_env_locally.sh" -p 80:80 -p 443:443 -p 9990:9990 -p 5060:5060 -p 5061:5061 -p 5062:5062 -p 5063:5063 -p 5060:5060/udp -p 65000-65050:65000-65050/udp restcomm/restcomm:lb```
 4. Register your Jitsi SIP client to use host address of the LB (ie 172.17.0.14 and port 5060 here) and place a call to sip:+1234@172.17.0.14

@@ -23,6 +23,6 @@ if [ -n "$CONFIG_URL" ]; then
   		USR="--user=$REPOUSR"
   		PASS="--password=$REPOPWRD"
   fi
-   URL="$ENVCONFURL $USR $PASS"
+   URL="$CONFIG_URL $USR $PASS"
    download_conf $URL $LOADER_BALANCER_CONFIG
 fi
