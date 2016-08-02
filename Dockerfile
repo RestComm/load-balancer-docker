@@ -27,8 +27,9 @@ RUN mkdir -p ${LOADER_BALANCER_DIR}
 RUN mkdir -p ${LOADER_BALANCER_DIR}/utils
 RUN mkdir -p ${LOADER_BALANCER_DIR}/config
 
-RUN wget -qO- https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-LoadBalancer/lastSuccessfulBuild/artifact/load-balancer-version.txt -O version.txt
-RUN wget -qc  https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-LoadBalancer/lastSuccessfulBuild/artifact/jar/target/sip-balancer-jar-`cat version.txt`-jar-with-dependencies.jar -O ${LOADER_BALANCER_DIR}/sip-balancer.jar && mv version.txt ${LOADER_BALANCER_DIR}
+#RUN wget -qO- https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-LoadBalancer/lastSuccessfulBuild/artifact/load-balancer-version.txt -O version.txt
+#RUN wget -qc  https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-LoadBalancer/lastSuccessfulBuild/artifact/jar/target/sip-balancer-jar-`cat version.txt`-jar-with-dependencies.jar -O ${LOADER_BALANCER_DIR}/sip-balancer.jar && mv version.txt ${LOADER_BALANCER_DIR}
+RUN wget -qc https://mobicents.ci.cloudbees.com/job/Restcomm-LoadBalancer-Test/ws/jar/target/sip-balancer-jar-2.0.0-SNAPSHOT-jar-with-dependencies.jar -O ${LOADER_BALANCER_DIR}/sip-balancer.jar
 
 # copy loadbalancer files
 ADD ./files/lb-configuration.properties ${LOADER_BALANCER_CONFIG}
