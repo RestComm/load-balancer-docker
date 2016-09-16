@@ -3,7 +3,7 @@
 echo "Configure loadbalancer"
 echo "Work directory: ${LOADER_BALANCER_DIR}"
 
-if [ -z "${HOST_ADDRESS}" ]; then
+if [ -z "${HOST_ADDRESS}"  && -z "${CONFIG_URL}" ]; then
 
     if [ -n "${INTERFACE}" ]; then
         NET_INTERFACE="${INTERFACE}"

@@ -42,8 +42,9 @@ ADD ./scripts/remote_config_downloader.sh /etc/my_init.d/loadbalancer1_remote.sh
 ADD ./scripts/configure_load_balancer.sh /etc/my_init.d/loadbalancer2_configure.sh
 
 #Add traces crontab cleanup file.
-ADD ./scripts/tcpdump_crontab /etc/cron.d/lbcpdump-cron
-
+ADD ./scripts/tcpdump_crontab /etc/cron.d/lbtcpdump-cron
+#Add traces crontab cleanup file.
+ADD ./scripts/lb_crontab /etc/cron.d/lblogs-cron
 # create start script
 ENV service_path /etc/service/loadbalancer
 RUN mkdir ${service_path}
