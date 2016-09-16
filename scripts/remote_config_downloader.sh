@@ -26,3 +26,5 @@ if [ -n "$CONFIG_URL" ]; then
    URL="$CONFIG_URL $USR $PASS"
    download_conf $URL $LOADER_BALANCER_CONFIG
 fi
+#auto delete script after run once. No need more.
+rm -- "$0"

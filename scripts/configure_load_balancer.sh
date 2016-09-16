@@ -72,3 +72,5 @@ nohup xargs bash -c "tcpdump -pni any -t -n -s 0   -G 3500 -w /opt/loadbalancer/
 
 echo "Setup log level: ${LOG_LEVEL}"
 sed -i "s/WARN/${LOG_LEVEL}/g" ${LOG4J_CONFIG}
+#auto delete script after run once. No need more.
+rm -- "$0"
