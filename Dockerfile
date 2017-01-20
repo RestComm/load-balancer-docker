@@ -32,7 +32,7 @@ RUN wget -qc  https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-Load
 
 # copy loadbalancer files
 ADD ./files/lb-configuration.xml ${LOADER_BALANCER_CONFIG}
-ADD ./files/keystore ${LOADER_BALANCER_DIR}/config/keystore
+ADD ./files/keystore.jks ${LOADER_BALANCER_DIR}/config/keystore.jks
 ADD ./files/utils/read-network-props.sh ${LOADER_BALANCER_DIR}/utils/read-network-props.sh
 ADD ./files/lb-log4j.xml ${LOG4J_CONFIG}
 
