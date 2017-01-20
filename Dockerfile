@@ -31,7 +31,7 @@ RUN wget -qO- https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-Load
 RUN wget -qc  https://mobicents.ci.cloudbees.com/view/RestComm/job/RestComm-LoadBalancer/lastSuccessfulBuild/artifact/jar/target/sip-balancer-jar-`cat version.txt`-jar-with-dependencies.jar -O ${LOADER_BALANCER_DIR}/sip-balancer.jar && mv version.txt ${LOADER_BALANCER_DIR}
 
 # copy loadbalancer files
-ADD ./files/lb-configuration.properties ${LOADER_BALANCER_CONFIG}
+ADD ./files/lb-configuration.xml ${LOADER_BALANCER_CONFIG}
 ADD ./files/keystore ${LOADER_BALANCER_DIR}/config/keystore
 ADD ./files/utils/read-network-props.sh ${LOADER_BALANCER_DIR}/utils/read-network-props.sh
 ADD ./files/lb-log4j.xml ${LOG4J_CONFIG}
