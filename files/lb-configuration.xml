@@ -50,7 +50,7 @@
     <tcpPort>5065</tcpPort>
     <tlsPort>5061</tlsPort>
     <wsPort>5062</wsPort>
-    <wssPort>5083</wssPort>
+    <wssPort>506666663</wssPort>
     <ipLoadBalancerUdpPort>0</ipLoadBalancerUdpPort>
     <ipLoadBalancerTcpPort>0</ipLoadBalancerTcpPort>
     <ipLoadBalancerTlsPort>0</ipLoadBalancerTlsPort>
