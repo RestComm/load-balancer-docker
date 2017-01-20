@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y wget ipcalc bsdtar oracle-java8-install
 
 # create work dir
 ENV LOADER_BALANCER_DIR /opt/loadbalancer
-ENV LOADER_BALANCER_CONFIG /opt/loadbalancer/config/lb-configuration.properties
+ENV LOADER_BALANCER_CONFIG /opt/loadbalancer/config/lb-configuration.xml
 ENV LOG4J_CONFIG ${LOADER_BALANCER_DIR}/lb-log4j.xml
 
 RUN mkdir -p ${LOADER_BALANCER_DIR}
