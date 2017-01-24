@@ -30,6 +30,7 @@ fi
 if [ -n "${HOST_ADDRESS}" ]; then
     echo "Setup host: ${HOST_ADDRESS}"
     sed -i "s/host=.*/host=${HOST_ADDRESS}/" $LOADER_BALANCER_CONFIG
+    sed -i "s/<host>.*<\/host>/<host>${HOST_ADDRESS}<\/host>/" $LOADER_BALANCER_CONFIG
     sed -i "s/smppHost=.*/smppHost=${HOST_ADDRESS}/" $LOADER_BALANCER_CONFIG
 fi
 
