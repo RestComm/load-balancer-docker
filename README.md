@@ -1,4 +1,6 @@
 # RestComm Load Balancer Docker Image
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FRestComm%2Fload-balancer-docker.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FRestComm%2Fload-balancer-docker?ref=badge_shield)
+
 
 RestComm is a next generation Cloud Communications Platform to rapidly build voice, video, and messaging applications, using mainstream development skills. Created by the people at Telestax.
 
@@ -40,3 +42,7 @@ Also you have 2 additional ways to specify config file:
 2. Check the host address from the logs ```Setup host: 172.17.0.14```
 3. Launch Docker Restcomm Core with command ```docker run -i --name=restcomm-lb -v /var/log/restcomm/:/var/log/restcomm/ -e STATIC_ADDRESS=192.168.1.12 -e USE_STANDARD_PORTS=false -e LOAD_BALANCERS=172.17.0.14 -e CONFIG_URL="https://raw.githubusercontent.com/RestComm/Restcomm-Docker/master/scripts/restcomm_env_locally.sh" -p 80:80 -p 443:443 -p 9990:9990 -p 5060:5060 -p 5061:5061 -p 5062:5062 -p 5063:5063 -p 5060:5060/udp -p 65000-65050:65000-65050/udp restcomm/restcomm:lb```
 4. Register your Jitsi SIP client to use host address of the LB (ie 172.17.0.14 and port 5060 here) and place a call to sip:+1234@172.17.0.14
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FRestComm%2Fload-balancer-docker.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FRestComm%2Fload-balancer-docker?ref=badge_large)
